@@ -2,7 +2,7 @@
 
 (function(module) {
 
-    var stores = [{
+    let stores = [{
         name: 'Pike Place Market',
         minCust: 23,
         maxCust: 65,
@@ -30,14 +30,14 @@
     }];
 
 
-    var randomHoursArray = [];
-    var cookieSalesArray = [];
+    let randomHoursArray = [];
+    let cookieSalesArray = [];
 
-    for(var j = 0; j < stores.length; j++) {
+    for(let j = 0; j < stores.length; j++) {
         stores[j].cookiesSalesPerStore = [];
-        for(var i = 0; i < 14; i++) {
-            var custPerHour = Math.floor(Math.random() * (stores[j].maxCust - stores[j].minCust)) + stores[j].minCust;
-            var cookieSales = custPerHour * stores[j].avgCookies;
+        for(let i = 0; i < 14; i++) {
+            let custPerHour = Math.floor(Math.random() * (stores[j].maxCust - stores[j].minCust)) + stores[j].minCust;
+            let cookieSales = custPerHour * stores[j].avgCookies;
                 //console.log('cookie sales:', cookieSales);
             randomHoursArray.push(custPerHour);
             cookieSalesArray.push(cookieSales);
@@ -53,9 +53,9 @@
 
     module.stores = stores;
     
-    var totals = [];
+    let totals = [];
     for(let i = 0; i < 14; i++) {
-        var total = 0;
+        let total = 0;
 
         for(let j = 0; j < stores.length; j++) {
             total += stores[j].cookiesSalesPerStore[i];
@@ -64,27 +64,27 @@
         totals.push(total);
     }
 
-    var grandTotal = totally(totals);
+    let grandTotal = totally(totals);
 
     function totally(totals) {
-        var grandTotal = 0;
-        for(var j = 0; j < 14; j++) {
+        let grandTotal = 0;
+        for(let j = 0; j < 14; j++) {
             grandTotal += totals[j];
         } 
         return grandTotal;
     }
 
-    var storeTotals = horizontalTotals(stores);
+    let storeTotals = horizontalTotals(stores);
     function horizontalTotals(stores) {
-        var storeTotals = 0;
+        let storeTotals = 0;
         
-        for(var j = 0; j < stores.length; j++) {
+        for(let j = 0; j < stores.length; j++) {
             stores[j].dailyStoreTotal = 0;
 
-            var salesPerStorePerHourArray = stores[j].cookiesSalesPerStore;
+            let salesPerStorePerHourArray = stores[j].cookiesSalesPerStore;
             console.log('Store Total Array:', salesPerStorePerHourArray);
 
-            for(var i = 0; i < 14; i++) {
+            for(let i = 0; i < 14; i++) {
                 stores[j].dailyStoreTotal += salesPerStorePerHourArray[i];
 
             }

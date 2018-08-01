@@ -40,7 +40,7 @@
         table.appendChild(dom);
     }
     
-    var totalsRow = render(totals);
+    let totalsRow = render(totals);
     tfooter.appendChild(totalsRow);
     
 
