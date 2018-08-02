@@ -44,11 +44,11 @@
             stores[j].cookiesSalesPerStore.push(cookieSales);
 
         } 
-        console.log('cust per hour array:', randomHoursArray);
-        console.log('cookie sales per hour:', cookieSalesArray);
+        //console.log('cust per hour array:', randomHoursArray);
+        //console.log('cookie sales per hour:', cookieSalesArray);
     }
         
-    console.log('stores array:', stores);
+    //console.log('stores array:', stores);
     module.stores = stores;
 
     module.stores = stores;
@@ -82,7 +82,7 @@
             stores[j].dailyStoreTotal = 0;
 
             let salesPerStorePerHourArray = stores[j].cookiesSalesPerStore;
-            console.log('Store Total Array:', salesPerStorePerHourArray);
+            //console.log('Store Total Array:', salesPerStorePerHourArray);
 
             for(let i = 0; i < 14; i++) {
                 stores[j].dailyStoreTotal += salesPerStorePerHourArray[i];
@@ -90,7 +90,7 @@
             }
 
             storeTotals = storeTotals + stores[j].cookiesSalesPerStore[j];
-            console.log('daily store totals:', stores[j].dailyStoreTotal);
+            //console.log('daily store totals:', stores[j].dailyStoreTotal);
 
         }
 
@@ -101,7 +101,7 @@
         cookiesSalesPerStore: totals,
         dailyStoreTotal: grandTotal
     };
-    console.log(module.totals);
+    //console.log(module.totals);
 
 
 })(window.module = window.module || {});
